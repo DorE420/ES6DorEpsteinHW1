@@ -43,3 +43,21 @@ body {
             width: 60px;
             width: 60px;
     }
+    #info
+    {
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       color: mediumblue;
+    }
+    #row1{
+
+        background-color: antiquewhite;
+        border: 5px dotted;
+        margin: 10px;
+        border-collapse: collapse;
+    }
+    .col-3{
+        border: 5px dotted;
+        margin: 10px;
+        border-collapse: collapse;
+    }
+    

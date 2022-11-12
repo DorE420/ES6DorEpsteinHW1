@@ -36,7 +36,7 @@
 
         });
 
-      function AddNewIngredient()
+      function AddNewIngredientRender()
         {
             str = "";
     str += '<h2>Ingredient name:</h2>';
@@ -54,6 +54,45 @@
 
         }
 
+            let counter=0;
+
+        function AddNewRecipeRender()
+        {
+            str="";
+            str+='<h2>Recipe Name:</h2>';
+            str+='<input id="Rname" type:"text" value="Write Recipe name here"/>';
+            str+='<h2>Cooking Method:</h2>';
+            str+='<input id="Rmethod" type:"text" value="Write Recipe method here"/>';
+            str+='<h2>Cooking Time:</h2>';
+            str+='<input id="Rtime" type:"text" value="Write Recipe Preparation time here"/>';
+            str += '<h2>Recipe image (url):</h2>';
+             str += '<input id="image" type="text" value="enter URL here"/>';
+             str += '<div id="row1" class="row">'
+    for (let index = 0; index < ingArr.length; index++) {
+        str += '<div class="col-3" >';
+        str += '<p>add <input id="'+ingArr[index].id +'" class="add" type="radio"/></p>';
+        str += '<p>ingredient details:</p>';
+        str += '<img src="'+ingArr[index].image+'" style="width:80%;"/>';
+        str += '<p>'+ingArr[index].name+'</p>';
+        str += '<p>'+ingArr[index].calories+' calories</p>';
+        str += '</div>';
+    }
+    str += '</div>';
+    str += '<div class="row">';
+        str+='<div class="col"';
+    str += '<input class="btn" onclick="CreateRec('+counter+')" type="button" value="Create recipe"/>';
+    str += '</div>';
+    str+='<div class="col"';
+    str += '<input class="btn" onclick="Fclose()" type="button" value="Close"/>';
+    str += '</div>';
+    str += '</div>'
+
+             document.getElementById("info").innerHTML=str;
+             document.getElementById("info").style.display = "block";
+            
+
+
+        }
 
         function Fclose(){
 
@@ -70,10 +109,10 @@
     <h1 id="firstHL">Hello Welcome to my kitchen!</h1>
     <div class="row" id="buttonsDiv">
         <div class="col-6">
-           <input class="btn1" onclick="AddNewRecipe()" type="button" value="New Recipe"/>
+           <input class="btn1" onclick="AddNewRecipeRender()" type="button" value="New Recipe"/>
         </div>
         <div class="col-6">
-            <input class="btn1" onclick="AddNewIngredient()" type="button" value="New Ingredient"/>
+            <input class="btn1" onclick="AddNewIngredientRender()" type="button" value="New Ingredient"/>
         </div>
         
         
