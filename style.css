@@ -13,7 +13,7 @@ body {
 {
     text-align:center;
 }
-    .row button,.btn1,.btn
+    .btn1,.btn
     {
         text-align:center;
         width: 30%;
@@ -43,6 +43,20 @@ body {
             width: 60px;
             width: 60px;
     }
+    #mainDish button{
+
+
+        text-align:center;
+        width: 60%;
+        height:20%;
+        background-color:aliceblue;
+        border-radius:40%;
+        border:5px solid;
+        font-weight:600;
+        padding:50px 10px;
+        font-family:'Franklin Gothic';
+
+    }
     #info
     {
        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -60,4 +74,5 @@ body {
         margin: 10px;
         border-collapse: collapse;
     }
+   
     

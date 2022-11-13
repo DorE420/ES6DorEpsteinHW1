@@ -79,10 +79,7 @@
     }
     str += '</div>';
     str += '<div class="row">';
-        str+='<div class="col"';
-    str += '<input class="btn" onclick="CreateRec('+counter+')" type="button" value="Create recipe"/>';
-    str += '</div>';
-    str+='<div class="col"';
+        str += '<input class="btn btn-primary" onclick="CreateRecipe()" type="button" value="Create recipe"/>';
     str += '<input class="btn" onclick="Fclose()" type="button" value="Close"/>';
     str += '</div>';
     str += '</div>'
@@ -94,6 +91,47 @@
 
         }
 
+        function GetIngredients()
+        {
+            str="";
+            str += '<div id="row1" class="row">'
+             for (let index = 0; index < ingArr.length; index++) {
+             str += '<div class="col-3" >';
+          
+            str += '<p>ingredient details:</p>';
+            str += '<img src="'+ingArr[index].image+'" style="width:80%;"/>';
+            str += '<p>'+ingArr[index].name+'</p>';
+            str += '<p>'+ingArr[index].calories+' calories</p>';
+            str += '</div>';
+    }
+             str += '</div>';
+            document.getElementById("info").innerHTML=str;
+             document.getElementById("info").style.display = "block";
+
+
+
+
+        }
+        function CreateRecipe()
+        {
+            str="";
+            str+='<div class="col-3" id="mainDish">';
+                str+='<h2>Dish Recipe Details</h2>';
+                dishImg=document.getElementById("image").value;
+                str += '<img src="'+dishImg+'" alt="no Picture">';
+                dishName=document.getElementById("Rname").value;
+                str += '<p >Dish name:"'+dishName+'"</p>';
+                dishMethod=document.getElementById("Rmethod").value;
+                str += '<p >Cooking method:"'+dishMethod+'"</p>';
+                dishTime=document.getElementById("Rtime").value;
+                str += '<p >Total cooking time:"'+dishTime+'"</p>';
+                calories=300;
+                str+='<p>Total calories:"'+calories+'" </p>';
+                str += '<button id="mainDish" onclick="GetIngredients()"> ShowIngredients </button>'
+               str += '</div>';
+               document.getElementById("recipeDivs").innerHTML += str
+
+        }
         function Fclose(){
 
                 str="";
@@ -120,7 +158,7 @@
     <div class="row" id="info">
 
     </div>
-    <div class="row">
+    <div class="row" id="recipeDivs">
         <div id="mainDish" class="col-3">
             <h2>Dish Recipe Details</h2>
             <img src="padthai1.jpg" alt="padthaiphoto">
@@ -128,7 +166,7 @@
             <p>Cooking method: cooking in a pan</p>
             <p>Total cooking time: 30 minutes</p>
             <p>Total calories: 280 </p>
-            <button onclick="ShowIngredients()" > ShowIngredients </button>
+            <button id="maindbtn" onclick="GetIngredients()" > ShowIngredients </button>
         </div>
     </div>
     
